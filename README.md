@@ -28,9 +28,28 @@ Opening Books:
 - [Goi5.1.bin](https://gitlab.com/OIVAS7572/Goi5.1.bin/-/raw/master/Goi5.1.bin.7z)
 - [Drawkiller_EloZoom_big.bin](/Drawkiller_EloZoom_big.bin)
 
-**Note: It is recommended not to run opening books. Even if you want to use opening books, use it only for standard chess and disable it for all other variants.**
-
+**Note: It is recommended not to run opening books. Even if you want to use opening books, use it only for standard chess and disable it for all other variants.** <br/>
+**Keep you Forks or Imports Up-to-Date & Check the other Branches in this Repository** <br/>
 **If you would like to run bot locally on PC, read the [lichess-bot manual](https://github.com/ShailChoksi/lichess-bot#how-to-install).**
+
+## How to change the engine used?
+
+**Changing the engine to an engine of your preference is simple. Just follow the following steps:**
+
+- Firstly, you have to remove the engine used. To do this you need to put `#` at the start of these [lines 16 to 18 in the dockerfile](/Dockerfile#L16-L18) (or you can delete those lines).
+
+- Then you need to download the binary of the chess engine you want to used and in your GitHub repository, Click on `Add files` and the click `Upload files` and upload the binary of the chess engine you have downloaded.
+
+Note: Make sure you download a linux binary that is supported by heroku (by default Stockfish is used, but the default engine name is `chess-engine`).
+
+- Then change the name of engine in [6th line of config.yml](/config.yml#L6) and [23rd line of Dockerfile](/Dockerfile#L23) to your binary file's name.
+
+#### How to use Stockfish dev
+
+- You can reset link in [15th line in Dockerfile](/Dockerfile#L15) to the Stockfish dev binary link from [abrok.eu/stockfish](http://abrok.eu/stockfish/v)
+(You can set this `http://abrok.eu/stockfish/latest/linux/stockfish_x64_modern.zip` link for latest Stockfish dev binary)
+
+**Note: You need to use `Linux x64 for modern computers` binary for Heroku.**
 
 ## Acknowledgements
 Credits to [ShailChoksi's lichess-bot](https://github.com/ShailChoksi/lichess-bot).
