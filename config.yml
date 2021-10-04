@@ -31,7 +31,7 @@ engine:                      # Engine settings.
       enabled: true
       min_time: 20
       move_quality: "best"     # One of "good", "best"
-      max_score_difference: 50 # Only for move_quality: "good". The maximum score difference (in cp) between the best move and the other moves.
+      max_score_difference: 60 # Only for move_quality: "good". The maximum score difference (in cp) between the best move and the other moves.
       min_depth: 30
       min_knodes: 0
     online_egtb:
@@ -46,7 +46,7 @@ engine:                      # Engine settings.
 #   Hash: 256  
   uci_options:               # Arbitrary UCI options passed to the engine.
     Move Overhead: 500       # Increase if your bot flags games too often.
-    Threads: 2               # Max CPU threads the engine can use.
+    Threads: 7               # Max CPU threads the engine can use.
     Hash: 256                # Max memory (in megabytes) the engine can allocate.
 #   Clear Hash: true         # Clear the hash table
 #   go_commands:             # Additional options to pass to the UCI go command.
@@ -83,7 +83,7 @@ challenge:                   # Incoming challenges.
   accept_bot: true           # Accepts challenges coming from other bots.
   only_bot: false            # Accept challenges by bots only.
   max_increment: 50          # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
-  min_increment: 0           # Minimum amount of increment to accept a challenge.
+  min_increment: 1           # Minimum amount of increment to accept a challenge.
   max_base: 315360000        # Maximum amount of base time to accept a challenge. The max is 315360000 (10 years).
   min_base: 0                # Minimum amount of base time to accept a challenge.
   variants:                  # Chess variants to accept (https://lichess.org/variant).
